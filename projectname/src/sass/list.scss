@@ -1,0 +1,200 @@
+@import "nav";
+@import "nav2";
+@import "sec_one";
+@mixin a_te($a:#cc3300) {
+    color: $a;
+    text-decoration: underline;
+}
+
+@mixin wid($w, $h) {
+    width: $w;
+    height: $h;
+}
+
+.sub {
+    height: 30px;
+    background-color: #F5F5F5;
+    line-height: 30px;
+    >div>a {
+        float: left;
+        padding: 0 40px;
+        font-size: 16px;
+        color: #000000;
+    }
+    >div>a:hover {
+        text-decoration: underline;
+    }
+    >div>ul {
+        float: left;
+        >li {
+            float: left;
+            margin-right: 14px;
+        }
+        >li::after {
+            content: "";
+            @include wid(1px, 8px);
+            display: inline-block;
+            vertical-align: middle;
+            border-left: 1px solid #E6E6E6;
+            margin-left: 14px;
+        }
+        >li>a {
+            font-size: 13px;
+        }
+        >li>a:hover {
+            @include a_te(#FF2832)
+        }
+    }
+}
+
+.two {
+    background: #FDF6C8;
+    height: auto;
+    margin-bottom: 20px;
+    >a {
+        @include wid(1200px, 500px);
+        margin: auto;
+        display: block;
+    }
+    >a>img {
+        display: block;
+    }
+    >.prize {
+        text-align: center;
+        line-height: 60px;
+        height: 60px;
+        background-color: #B5C155;
+        color: #fff;
+        font-size: 30px;
+        letter-spacing: 2px;
+    }
+}
+
+.container {
+    background-color: #f7f7f7;
+    padding: 0 10px;
+    height: 683px;
+    box-sizing: border-box;
+    >ul {
+        border-left: 1px solid #DFDEDD;
+        border-right: 1px solid #DFDEDD;
+    }
+    >ul>li {
+        position: relative;
+        box-sizing: border-box;
+        @include wid(235px, 316px);
+        float: left;
+        padding: 10px 17px;
+        background-color: #EFEEED;
+        border-left: 1px solid #DFDEDD;
+        border-bottom: 1px solid #DFDEDD;
+        >a {
+            display: block;
+            @include wid(200px, 200px);
+            >img {
+                display: block;
+            }
+        }
+        >p {
+            height: 50px;
+            line-height: 25px;
+            overflow: hidden;
+            >a:hover {
+                @include a_te();
+            }
+        }
+        >h3 {
+            line-height: 20px;
+            color: #cc3300;
+        }
+        >em {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            text-indent: 27px;
+            @include wid(60px, 24px);
+            line-height: 24px;
+            background: url(../img/bg_moban05_sprite.png) 0 -24px no-repeat;
+        }
+        >em>a:hover {
+            @include a_te();
+        }
+    }
+    >.page {
+        height: 50px;
+        text-align: right;
+        box-sizing: border-box;
+        overflow: hidden;
+        >span {
+            display: inline-block;
+            @include wid(80px, 30px);
+            line-height: 30px;
+            text-align: center;
+            border: 1px solid #DDD;
+            background-color: #F7F7F7;
+        }
+        >span.s_active {
+            background-color: #fff;
+            color: #CCC;
+        }
+        >span:hover {
+            box-shadow: 0 1px 1px rgba(0, 1, 1, .08);
+        }
+        >ul {
+            display: inline-block;
+            position: relative;
+            margin: 0 10px;
+            top: 11px;
+            >li {
+                box-sizing: border-box;
+                float: left;
+                margin: 0px 5px;
+                @include wid(30px, 30px);
+                border: 1px solid #DDD;
+                text-align: center;
+                line-height: 30px;
+                background-color: #F7F7F7;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            >li.active {
+                background-color: #fff;
+                border: none;
+                color: #cc3300;
+                border-radius: 50%;
+            }
+            >li:last-child {
+                border: none;
+                background-color: #fff;
+                color: #CCC;
+                border-radius: 50%;
+            }
+        }
+        >em {
+            display: inline-block;
+            margin: 0 10px;
+            >b {
+                font-weight: 700;
+                color: #000;
+                margin: 0 4px;
+                font-size: 16px;
+            }
+        }
+        >strong {
+            display: inline-block;
+            margin: 0 10px;
+            >input {
+                @include wid(26px, 26px);
+                margin: 0 4px;
+            }
+            >input::placeholder {
+                text-align: center;
+            }
+        }
+        >button {
+            @include wid(60px, 30px);
+            margin: 0 10px;
+        }
+    }
+}

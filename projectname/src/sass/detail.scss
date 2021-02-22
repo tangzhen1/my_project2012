@@ -1,0 +1,80 @@
+@import "nav";
+@import "nav2";
+@mixin wid($w, $h) {
+    width: $w;
+    height: $h;
+}
+
+#s_one {
+    height: 30px;
+    line-height: 30px;
+    background-color: #FF2832;
+    >div>a {
+        float: left;
+        margin: 0 30px;
+        color: #fff;
+        font-size: 15px;
+    }
+    >div>ul {
+        float: left;
+        margin-left: 10px;
+    }
+    >div>ul>li {
+        float: left;
+        margin-right: 10px;
+        font-size: 13px;
+    }
+    >div>ul>li:after {
+        content: "";
+        @include wid(1px, 8px);
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 10px;
+        border-left: 1px solid #E6E6E6;
+    }
+    >div>ul>li>a {
+        color: #fff;
+    }
+    >div>ul>li>a:hover {
+        text-decoration: underline;
+    }
+}
+
+#s_two>img {
+    margin-top: 10px;
+    display: block;
+}
+
+#s_three {
+    >.t_top {
+        height: 48px;
+        line-height: 48px;
+        >a {
+            float: left;
+            margin-right: 10px;
+            &:after {
+                content: ">";
+                margin-left: 10px;
+            }
+        }
+        >a:first-child {
+            font-size: 14px;
+            font-weight: 700;
+        }
+        >a:last-child::after {
+            content: "";
+        }
+    }
+}
+
+.content_left {
+    width: 320px;
+    margin-right: 20px;
+    background-color: pink;
+    >.zoom {
+        @include wid(320px, 320px);
+        >.small {
+            @include wid(320px, 320px);
+        }
+    }
+}

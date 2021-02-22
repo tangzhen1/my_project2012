@@ -1,0 +1,610 @@
+.h {
+    width: 960px;
+    margin: auto;
+}
+
+body {
+    background-color: #F6F9FB;
+}
+
+
+/* 头部区域开始*/
+
+@mixin wid_hei($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin Position($posi, $top, $left) {
+    position: $posi;
+    left: $left;
+    top: $top;
+}
+
+@mixin Height($height, $lineheight) {
+    height: $height;
+    line-height: $lineheight;
+}
+
+header {
+    border-bottom: 3.5px solid #F07700;
+    height: 71px;
+    background-color: #fff;
+    .header_left {
+        float: left;
+        @include wid_hei(171px, 100%);
+        a {
+            display: block;
+            height: 100%;
+            img {
+                @include wid_hei(100%, 100%);
+            }
+        }
+    }
+    .header_right {
+        @include wid_hei(788px, 100%);
+        float: right;
+        .header_right_top {
+            @include Height(21px, 21px)
+        }
+    }
+}
+
+.top_nav {
+    float: right;
+    .header_car:before {
+        content: "\e640";
+        color: #FF5D05;
+        font-family: "iconfont";
+        font-size: 18px;
+        vertical-align: middle;
+    }
+    >li {
+        position: relative;
+        float: left;
+        &:nth-child(n+2):before {
+            @include wid_hei(1px, 10px);
+            content: "";
+            @include Position(absolute, 6px, 0px);
+            background: transparent;
+            border-left: 1px solid #BCBCBC;
+        }
+        >a {
+            padding: 0 8px;
+        }
+        a:hover {
+            color: #FF5D05;
+            text-decoration: underline;
+        }
+    }
+    .my_dd {
+        border: 1px solid #fff;
+        border-bottom: none;
+        >a {
+            padding-right: 18px;
+        }
+        >a:after {
+            position: absolute;
+            content: "";
+            @include wid_hei(0, 0);
+            border: 4px solid transparent;
+            border-top-color: #949493;
+            top: 8.5px;
+            right: 3px;
+        }
+        &:hover {
+            border-color: #FF5D05;
+            >a:after {
+                border: 4px solid transparent;
+                top: 4.5px;
+                border-bottom-color: #949493;
+            }
+        }
+        ol {
+            @include Position(absolute, 20.5px, -1px);
+            display: none;
+            background-color: #fff;
+            padding: 2px 0 4px 0;
+            width: 100%;
+            z-index: 2;
+            border: 1px solid #FF5D05;
+            border-top: none;
+            >li {
+                padding: 0 7px;
+                >a {
+                    display: block;
+                    @include Height(24px, 24px);
+                    border-bottom: 1px solid rgb(240, 240, 240);
+                }
+            }
+        }
+        &:hover {
+            >ol {
+                display: block;
+            }
+        }
+    }
+}
+
+.header_welcome {
+    float: right;
+    text-align: right;
+    width: 460px;
+    @include Height(21px, 21px);
+    padding-right: 12px;
+    letter-spacing: 1px;
+    >a {
+        color: #1A66B3;
+    }
+}
+
+
+/* 头部区域结束*/
+
+
+/* 模块注册区域开始*/
+
+@mixin seContent($width, $height) {
+    width: $width;
+    height: $height;
+    position: absolute;
+    background-color: #fff;
+    left: 10px;
+    bottom: 10px;
+}
+
+@mixin re_newUser($width, $height) {
+    position: relative;
+    width: $width;
+    display: none;
+    height: $height;
+    margin: 40px auto 0;
+    padding-left: 10px;
+    background-color: #ebeeef;
+}
+
+.newUser {
+    @include re_newUser( 940px, 574px);
+    display: block;
+    .se_content {
+        @include seContent( 950px, 574px);
+        .se_re {
+            box-sizing: border-box;
+            margin-top: 30px;
+            height: 75px;
+            padding: 30px 10px 0 10px;
+            .re_one {
+                position: relative;
+                border-bottom: 1px solid #ECEEF2;
+            }
+        }
+    }
+}
+
+@mixin Re_left() {
+    position: absolute;
+    z-index: 2;
+    @include wid_hei(135px, 44px);
+    left: 20px;
+    font-size: 16px;
+    text-align: center;
+    line-height: 44px;
+    border: 1px solid #ECEEF2;
+}
+
+.re_left {
+    float: left;
+    height: 45px;
+    >a {
+        @include Re_left();
+        &:first-child {
+            border-bottom-color: #fff;
+        }
+        &:nth-child(2) {
+            background-color: #f5f5f5;
+            left: 170px;
+        }
+    }
+}
+
+@mixin Re_rigft($width, $height) {
+    width: $width;
+    height: $height;
+    line-height: $height;
+    padding: 0 3px;
+    float: right;
+}
+
+.re_right {
+    @include Re_rigft(140px, 45px);
+    >a {
+        margin: 0 5px;
+        &:first-child::before {
+            content: "\e615";
+            font-family: "iconfont";
+            color: #FF3E03;
+            margin-right: 5px;
+        }
+    }
+}
+
+.re_me {
+    .re_hint {
+        width: 670px;
+        margin: 15px auto;
+        @include Height(24px, 24px);
+        text-indent: 20px;
+        border: 1px solid #fedbd1;
+        background: #FEF7F5 url(../img/new_tip.png) no-repeat 2px center;
+        >a {
+            color: #1A66B3;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+
+/*表单信息填写区域*/
+
+@mixin Re_form_input($width, $height) {
+    width: $width;
+    height: $height;
+    line-height: $height;
+    display: block;
+    margin: 10px auto;
+    background-color: #FF2832;
+    border-radius: 25px;
+    border: none;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    letter-spacing: 1px;
+    outline: none;
+}
+
+@mixin Re_h3($width, $left, $top) {
+    width: $width;
+    position: absolute;
+    border: 1px solid #FCD9B0;
+    background: #FFF0CF url(../img/new_tip.png) no-repeat 2px center;
+    font-weight: 100;
+    font-size: 12px;
+    top: $top;
+    text-indent: 20px;
+    left: $left;
+    display: none;
+}
+
+#re_form {
+    margin-top: 40px;
+    >input {
+        @include Re_form_input(178px, 44px)
+    }
+    >div {
+        height: 67px;
+        position: relative;
+        >span {
+            display: inline-block;
+            width: 300px;
+            padding-right: 12px;
+            text-align: right;
+        }
+        >input {
+            @include Height(38px, 38px);
+            width: 290px;
+            margin-right: 10px;
+            border: 1px solid #E6E6E6;
+            outline-color: #969696;
+        }
+        >p {
+            @include Height(25px, 25px);
+            margin-left: 320px;
+            text-indent: 5px;
+            color: #787878;
+            >i {
+                display: none;
+                margin: 6px 2px 0 2px;
+                float: left;
+                width: 22px;
+                height: 10px;
+                background-color: #D6D6D6;
+                &:first-child {
+                    background-color: #FF3600;
+                }
+            }
+        }
+        >h3 {
+            @include Height(16px, 16px);
+            @include Re_h3(294px, 316px, 43px);
+        }
+        em {
+            display: inline-block;
+            position: relative;
+            top: 6px;
+            @include wid_hei(18px, 18px);
+            background: url(../img/icon_20150706.png) no-repeat -999px -999px;
+        }
+    }
+}
+
+
+/*信息填写区域*/
+
+
+/*验证码区域*/
+
+.ver_code {
+    margin-bottom: 10px;
+    >input {
+        width: 160px!important;
+    }
+    >em {
+        @include wid_hei(30px, 42px);
+        display: inline-block;
+        line-height: 42px;
+        text-align: center;
+        font-size: 18px;
+        vertical-align: bottom;
+        margin: 0 0 0 -40px;
+    }
+    >a {
+        color: #1A66B3;
+        margin-left: 20px;
+        display: inline-block;
+        vertical-align: middle;
+        >img {
+            display: block;
+            @include wid_hei(84px, 42px);
+        }
+        &:nth-of-type(2) {
+            margin-left: 10px;
+        }
+    }
+}
+
+
+/*验证码区域*/
+
+
+/*阅读同意条款*/
+
+.affirm_re {
+    height: auto!important;
+    padding-left: 310px;
+    >input {
+        @include wid_hei(11px!important, 11px!important);
+        vertical-align: bottom;
+    }
+    >a {
+        color: #1A66B3;
+    }
+    >p {
+        color: red!important;
+        margin-left: 10px!important;
+    }
+}
+
+
+/*阅读同意条款*/
+
+
+/*新企业注册区域开始*/
+
+.new_ente {
+    @include re_newUser( 940px, 1320px);
+    display: none;
+    .se_content {
+        @include seContent( 950px, 1320px);
+        .se_re {
+            box-sizing: border-box;
+            margin-top: 30px;
+            height: 75px;
+            padding: 30px 10px 0 10px;
+            .re_one {
+                position: relative;
+                border-bottom: 1px solid #ECEEF2;
+            }
+        }
+    }
+}
+
+.enre_left {
+    float: left;
+    height: 45px;
+    >a {
+        @include Re_left();
+        &:first-child {
+            background-color: #f5f5f5;
+        }
+        &:nth-child(2) {
+            border-bottom-color: #fff;
+            left: 170px;
+        }
+    }
+}
+
+.enre_right {
+    @include Re_rigft(160px, 45px);
+    >a {
+        margin: 0 5px;
+        &:first-child::before {
+            content: "";
+        }
+        &:last-child {
+            float: right;
+            margin: 12px 10px 0 0;
+            @include wid_hei(44px, 22px);
+            line-height: 22px;
+            text-align: center;
+            padding: 1px 2px;
+            border-radius: 2px;
+            background: #9A9FA6;
+            color: #fff;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.re_tip {
+    >img {
+        display: block;
+    }
+}
+
+.re_tel {
+    @include Height(44px, 44px);
+    text-align: center;
+    font-size: 16px;
+    color: #969696;
+    background: url(../img/qiye_tel.png);
+    >a {
+        font-size: 14px;
+        margin-left: 10px;
+        color: #1A66B3
+    }
+}
+
+
+/* 企业注册信息填写部分开始*/
+
+@mixin Re_span($width, $height) {
+    display: inline-block;
+    width: $width;
+    height: $height;
+    line-height: $height;
+    padding-right: 10px;
+    text-align: right;
+}
+
+#ente_form {
+    >h2 {
+        font-size: 16px;
+        margin-left: 200px;
+        background: url(../img/icon_qy.png) no-repeat;
+        text-indent: 30px;
+    }
+    >div {
+        height: 62px;
+        position: relative;
+        >span {
+            @include Re_span(340px, 30px);
+        }
+        >input {
+            @include wid_hei( 312px, 28px);
+            border: 1px solid #E6E6E6;
+            outline-color: #969696;
+        }
+        >p {
+            @include Height(28px, 30px);
+            text-indent: 5px;
+            margin-left: 350px;
+            visibility: hidden;
+            >i {
+                display: none;
+                margin: 6px 2px 0 2px;
+                float: left;
+                width: 22px;
+                height: 10px;
+                background-color: #D6D6D6;
+                &:first-child {
+                    background-color: #FF3600;
+                }
+            }
+        }
+        >h3 {
+            @include Height(16px, 16px);
+            @include Re_h3(316px, 354px, 38px);
+        }
+    }
+    .second {
+        background-position: 0 -28px;
+    }
+}
+
+input::placeholder {
+    font-size: 12px;
+    text-indent: 5px;
+}
+
+.company_adress {
+    height: auto!important;
+    .adress_fill {
+        >span {
+            @include Re_span(340px, 30px);
+        }
+        >div {
+            display: inline-block;
+            >p {
+                @include Height(30px, 30px);
+            }
+            >b {
+                box-sizing: border-box;
+                @include Re_span(100px, 30px);
+                border: 1px solid #E6E6E6;
+                padding: 0 10px;
+                margin-left: 5px;
+                font-weight: normal;
+                &::after {
+                    content: "\e63d";
+                    font-family: "iconfont";
+                    font-weight: 600;
+                    margin-left: 30px;
+                }
+                &:first-child {
+                    margin-left: 0px;
+                }
+            }
+        }
+    }
+    .adress_audit {
+        >span {
+            float: left;
+            @include Re_span(340px, 30px);
+        }
+        >input {
+            @include wid_hei( 312px, 28px);
+            border: 1px solid #E6E6E6;
+            outline-color: #969696;
+            margin-left: 4px;
+        }
+    }
+}
+
+.fix_tel {
+    >div {
+        display: inline-block;
+        position: relative;
+        >input {
+            text-indent: 5px;
+            @include wid_hei( 96px, 24px);
+            border: 1px solid #E6E6E6;
+            margin-left: 3px;
+            color: #969696;
+            &:first-child {
+                margin-left: 0px;
+            }
+        }
+        >p {
+            position: absolute;
+            left: 0;
+            @include wid_hei( 80px, 28px);
+        }
+    }
+}
+
+.ente_p {
+    margin-left: 20px!important;
+}
+
+#ente_form {
+    >input {
+        @include Re_form_input(178px, 44px)
+    }
+}
+
+
+/* 企业注册信息填写部分结束*/

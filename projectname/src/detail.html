@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《国内大奖书-鞋尖朝外》</title>
+    <link rel="shortcut icon" href="./img/下载.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="font/iconfont.css">
+    <link rel="stylesheet" href="css/detail.css">
+    <script src="script/index_module.js" type="module"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script src="script/detail_module.js" type="module"></script>
+</head>
+
+<body>
+    <!-- 头部图片部分结束 -->
+    <!-- 导航栏部分开始  -->
+    <nav>
+        <div class="w">
+            <ul class="nav_adress">
+            </ul>
+            <div class="nav_right">
+                <div class="nav_right_bemember">欢迎光临当当,&nbsp;请<a href="login.html" class="nav_login">登录</a><a href="registry.html">成为会员</a></div>
+                <ul class="nav_right_int">
+                    <li><a href="">我的云书房</a></li>
+                    <li class="int_li"><a href="">我的当当</a>
+                        <ol>
+                            <li> <a href="">我的订单</a></li>
+                            <li> <a href="">购物车</a></li>
+                            <li> <a href="">银铃铛抵现</a></li>
+                            <li> <a href="">我的收藏</a></li>
+                            <li> <a href="">我的余额</a></li>
+                            <li> <a href="">我的评论</a></li>
+                            <li> <a href="">礼券/礼品卡</a></li>
+                        </ol>
+                    </li>
+                    <li class="int_li"><a href="">0元购物</a>
+                        <ol>
+                            <li> <a href="">0元领物</a></li>
+                            <li> <a href="">当当拼团</a></li>
+                            <li> <a href="">1元砍价</a></li>
+                            <li> <a href="">1分抽奖</a></li>
+                        </ol>
+                    </li>
+                    <li><a href="">小说投稿</a></li>
+                    <li class="int_li"><a href="">企业采购</a>
+                        <ol>
+                            <li> <a href="">大宗采购</a></li>
+                            <li> <a href="">礼品卡采购</a></li>
+                            <li> <a href="">礼品卡激活</a></li>
+                            <li> <a href="">礼品卡使用</a></li>
+                            <li> <a href="">分销/荐购</a></li>
+                            <li> <a href="">礼品卡专区</a></li>
+                        </ol>
+                    </li>
+                    <li class="int_li"><a href="">客户服务</a>
+                        <ol>
+                            <li> <a href="">帮助中心</a></li>
+                            <li> <a href="">自助退换货</a></li>
+                            <li> <a href="">自助发票</a></li>
+                            <li> <a href="">联系客服</a></li>
+                            <li> <a href="">我要投诉</a></li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- 导航栏部分结束  -->
+    <!-- 顶部搜索部分开始 -->
+    <div class="top_search w">
+        <div class="top_left">
+            <a href=""><img src="http://img61.ddimg.cn/upload_img/00405/luyi/DDlogoNEW.gif" alt=""></a>
+        </div>
+        <div class="top_right">
+            <div class="right_search">
+                <div class="search">
+                    <input type="text" placeholder="伊索寓言">
+                    <span>孕妇服饰
+                        <div class="span_div">
+                            <ul>
+                                <li>全部分类</li>
+                                <li>尾品汇</li>
+                                <li>图书</li>
+                                <li>电子书</li> 
+                                <li>音像</li>
+                                <li>影视</li>
+                                <li>时尚美妆</li>
+                                <li>母婴用品</li>
+                                <li>玩具</li>
+                                <li>孕婴服饰</li>
+                                <li>童装童鞋</li>
+                                <li>家居日用</li>
+                                <li>家居装饰</li>
+                                <li>服装</li>
+                                <li>鞋</li>
+                                <li>箱包皮具</li>
+                                <li>手表饰品</li>
+                                <li>运动户外</li>
+                                <li>汽车用品</li>
+                                <li>食品</li>
+                                <li>手机通讯</li>
+                                <li>数码影音</li>
+                                <li>电脑办公</li>
+                                <li>大家电</li>
+                                <li>家用电器</li>
+                            </ul>
+                        </div>
+                    </span>
+                    <em class="icon-magnifier"></em>
+                    <div class="search_list">
+                        <ul> </ul>
+                    </div>
+                </div>
+                <script>
+                    $(".search input").on("focus", function() {
+                        $(this).attr("placeholder", "");
+                    })
+                    $(".search input").on("input", function() {
+                        let $a = $(this).val();
+                        if ($a.length > 1) {
+                            $(".search_list").css("display", "block")
+                        }
+                        let sc = document.querySelector("#json");
+                        if (sc) document.body.removeChild(sc);
+                        let vc = document.createElement("script");
+                        vc.id = "json";
+                        vc.src = "https://suggest.taobao.com/sug?code=utf-8&q=" + $a + "&callback=jsonp2"; // haha(data);
+                        document.body.appendChild(vc);
+                    })
+
+                    function jsonp2(d) {
+                        let str = '';
+                        let count = 0;
+                        for (let value of d.result) {
+                            count++;
+                            str += `<li>${value[0]}</li>`
+                            if (count === 10) break
+                        }
+                        $(".search_list ul").html(str)
+                        $(".search_list ul li").on("click", function() {
+                            $(".search input").val($(this).html());
+                            $(".search_list").css("display", "none")
+                        })
+                    }
+                </script>
+                <div class="search_bottom
+                "><span>热搜:</span>
+                    <a href="">刘慈欣</a>
+                    <a href="">我爱我的家乡</a>
+                    <a href="">权力意志</a>
+                    <a href="">六级物理</a>
+                    <a href="">十万个为什么</a>
+                    <a href="">高级搜索</a>
+                </div>
+            </div>
+            <div class="cart_right">
+                <a href="">购物车<span>0</span></a>
+                <a href="">我的订单</a>
+            </div>
+        </div>
+    </div>
+    <!-- 顶部搜索部分结束 -->
+    <!-- 模块一部分开始 -->
+    <section id="s_one">
+        <div class="w one">
+            <a href="">童书榜</a>
+            <ul>
+                <li><a href="">童书频道</a></li>
+                <li>
+                    <a href="">0-2岁馆</a>
+                </li>
+                <li>
+                    <a href="">3-6岁馆</a>
+                </li>
+                <li>
+                    <a href="">7-10岁馆</a>
+                </li>
+                <li>
+                    <a href="">11-14岁馆</a>
+                </li>
+                <li>
+                    <a href="">儿童文学馆</a>
+                </li>
+                <li>
+                    <a href="">绘本馆</a>
+                </li>
+                <li>
+                    <a href="">科普百科馆</a>
+                </li>
+                <li>
+                    <a href="">新书速递</a>
+                </li>
+                <li>
+                    <a href="">童书特惠</a>
+                </li>
+                <li>
+                    <a href="">童书88元10件</a>
+                </li>
+                <li>
+                    <a href="">全部图书</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- 模块一部分结束 -->
+    <!-- 模块二部分开始 -->
+    <section id="s_two" class="w">
+        <img src="http://img60.ddimg.cn/2021/2/18/2021021810473025838.jpg" alt="">
+    </section>
+    <!-- 模块二部分结束 -->
+    <section class="w" id="s_three">
+        <div class="t_top">
+            <a href="">图书</a>
+            <a href="">童书</a>
+            <a href="">中国儿童文学</a>
+            <a href="">成长/校园小说</a>
+            <a href="">国内大奖书系-鞋尖朝外</a>
+        </div>
+        <div class="content">
+            <div class="content_left">
+                <div class="zoom">
+                    <div class="small">
+                        <img src="http://img3m6.ddimg.cn/4/2/29127586-2_u_3.jpg" alt="">
+                    </div>
+                    <div class="big"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

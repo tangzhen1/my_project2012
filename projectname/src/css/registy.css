@@ -1,0 +1,619 @@
+@charset "UTF-8";
+.h {
+  width: 960px;
+  margin: auto;
+}
+
+body {
+  background-color: #F6F9FB;
+}
+
+/* 头部区域开始*/
+header {
+  border-bottom: 3.5px solid #F07700;
+  height: 71px;
+  background-color: #fff;
+}
+header .header_left {
+  float: left;
+  width: 171px;
+  height: 100%;
+}
+header .header_left a {
+  display: block;
+  height: 100%;
+}
+header .header_left a img {
+  width: 100%;
+  height: 100%;
+}
+header .header_right {
+  width: 788px;
+  height: 100%;
+  float: right;
+}
+header .header_right .header_right_top {
+  height: 21px;
+  line-height: 21px;
+}
+
+.top_nav {
+  float: right;
+}
+.top_nav .header_car:before {
+  content: "\e640";
+  color: #FF5D05;
+  font-family: "iconfont";
+  font-size: 18px;
+  vertical-align: middle;
+}
+.top_nav > li {
+  position: relative;
+  float: left;
+}
+.top_nav > li:nth-child(n+2):before {
+  width: 1px;
+  height: 10px;
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 6px;
+  background: transparent;
+  border-left: 1px solid #BCBCBC;
+}
+.top_nav > li > a {
+  padding: 0 8px;
+}
+.top_nav > li a:hover {
+  color: #FF5D05;
+  text-decoration: underline;
+}
+.top_nav .my_dd {
+  border: 1px solid #fff;
+  border-bottom: none;
+}
+.top_nav .my_dd > a {
+  padding-right: 18px;
+}
+.top_nav .my_dd > a:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border: 4px solid transparent;
+  border-top-color: #949493;
+  top: 8.5px;
+  right: 3px;
+}
+.top_nav .my_dd:hover {
+  border-color: #FF5D05;
+}
+.top_nav .my_dd:hover > a:after {
+  border: 4px solid transparent;
+  top: 4.5px;
+  border-bottom-color: #949493;
+}
+.top_nav .my_dd ol {
+  position: absolute;
+  left: -1px;
+  top: 20.5px;
+  display: none;
+  background-color: #fff;
+  padding: 2px 0 4px 0;
+  width: 100%;
+  z-index: 2;
+  border: 1px solid #FF5D05;
+  border-top: none;
+}
+.top_nav .my_dd ol > li {
+  padding: 0 7px;
+}
+.top_nav .my_dd ol > li > a {
+  display: block;
+  height: 24px;
+  line-height: 24px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.top_nav .my_dd:hover > ol {
+  display: block;
+}
+
+.header_welcome {
+  float: right;
+  text-align: right;
+  width: 460px;
+  height: 21px;
+  line-height: 21px;
+  padding-right: 12px;
+  letter-spacing: 1px;
+}
+.header_welcome > a {
+  color: #1A66B3;
+}
+
+/* 头部区域结束*/
+/* 模块注册区域开始*/
+.newUser {
+  position: relative;
+  width: 940px;
+  display: none;
+  height: 574px;
+  margin: 40px auto 0;
+  padding-left: 10px;
+  background-color: #ebeeef;
+  display: block;
+}
+.newUser .se_content {
+  width: 950px;
+  height: 574px;
+  position: absolute;
+  background-color: #fff;
+  left: 10px;
+  bottom: 10px;
+}
+.newUser .se_content .se_re {
+  box-sizing: border-box;
+  margin-top: 30px;
+  height: 75px;
+  padding: 30px 10px 0 10px;
+}
+.newUser .se_content .se_re .re_one {
+  position: relative;
+  border-bottom: 1px solid #ECEEF2;
+}
+
+.re_left {
+  float: left;
+  height: 45px;
+}
+.re_left > a {
+  position: absolute;
+  z-index: 2;
+  width: 135px;
+  height: 44px;
+  left: 20px;
+  font-size: 16px;
+  text-align: center;
+  line-height: 44px;
+  border: 1px solid #ECEEF2;
+}
+.re_left > a:first-child {
+  border-bottom-color: #fff;
+}
+.re_left > a:nth-child(2) {
+  background-color: #f5f5f5;
+  left: 170px;
+}
+
+.re_right {
+  width: 140px;
+  height: 45px;
+  line-height: 45px;
+  padding: 0 3px;
+  float: right;
+}
+.re_right > a {
+  margin: 0 5px;
+}
+.re_right > a:first-child::before {
+  content: "\e615";
+  font-family: "iconfont";
+  color: #FF3E03;
+  margin-right: 5px;
+}
+
+.re_me .re_hint {
+  width: 670px;
+  margin: 15px auto;
+  height: 24px;
+  line-height: 24px;
+  text-indent: 20px;
+  border: 1px solid #fedbd1;
+  background: #FEF7F5 url(../img/new_tip.png) no-repeat 2px center;
+}
+.re_me .re_hint > a {
+  color: #1A66B3;
+}
+.re_me .re_hint > a:hover {
+  text-decoration: underline;
+}
+
+/*表单信息填写区域*/
+#re_form {
+  margin-top: 40px;
+}
+#re_form > input {
+  width: 178px;
+  height: 44px;
+  line-height: 44px;
+  display: block;
+  margin: 10px auto;
+  background-color: #FF2832;
+  border-radius: 25px;
+  border: none;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  letter-spacing: 1px;
+  outline: none;
+}
+#re_form > div {
+  height: 67px;
+  position: relative;
+}
+#re_form > div > span {
+  display: inline-block;
+  width: 300px;
+  padding-right: 12px;
+  text-align: right;
+}
+#re_form > div > input {
+  height: 38px;
+  line-height: 38px;
+  width: 290px;
+  margin-right: 10px;
+  border: 1px solid #E6E6E6;
+  outline-color: #969696;
+}
+#re_form > div > p {
+  height: 25px;
+  line-height: 25px;
+  margin-left: 320px;
+  text-indent: 5px;
+  color: #787878;
+}
+#re_form > div > p > i {
+  display: none;
+  margin: 6px 2px 0 2px;
+  float: left;
+  width: 22px;
+  height: 10px;
+  background-color: #D6D6D6;
+}
+#re_form > div > p > i:first-child {
+  background-color: #FF3600;
+}
+#re_form > div > h3 {
+  height: 16px;
+  line-height: 16px;
+  width: 294px;
+  position: absolute;
+  border: 1px solid #FCD9B0;
+  background: #FFF0CF url(../img/new_tip.png) no-repeat 2px center;
+  font-weight: 100;
+  font-size: 12px;
+  top: 43px;
+  text-indent: 20px;
+  left: 316px;
+  display: none;
+}
+#re_form > div em {
+  display: inline-block;
+  position: relative;
+  top: 6px;
+  width: 18px;
+  height: 18px;
+  background: url(../img/icon_20150706.png) no-repeat -999px -999px;
+}
+
+/*信息填写区域*/
+/*验证码区域*/
+.ver_code {
+  margin-bottom: 10px;
+}
+.ver_code > input {
+  width: 160px !important;
+}
+.ver_code > em {
+  width: 30px;
+  height: 42px;
+  display: inline-block;
+  line-height: 42px;
+  text-align: center;
+  font-size: 18px;
+  vertical-align: bottom;
+  margin: 0 0 0 -40px;
+}
+.ver_code > a {
+  color: #1A66B3;
+  margin-left: 20px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.ver_code > a > img {
+  display: block;
+  width: 84px;
+  height: 42px;
+}
+.ver_code > a:nth-of-type(2) {
+  margin-left: 10px;
+}
+
+/*验证码区域*/
+/*阅读同意条款*/
+.affirm_re {
+  height: auto !important;
+  padding-left: 310px;
+}
+.affirm_re > input {
+  width: 11px !important;
+  height: 11px !important;
+  vertical-align: bottom;
+}
+.affirm_re > a {
+  color: #1A66B3;
+}
+.affirm_re > p {
+  color: red !important;
+  margin-left: 10px !important;
+}
+
+/*阅读同意条款*/
+/*新企业注册区域开始*/
+.new_ente {
+  position: relative;
+  width: 940px;
+  display: none;
+  height: 1320px;
+  margin: 40px auto 0;
+  padding-left: 10px;
+  background-color: #ebeeef;
+  display: none;
+}
+.new_ente .se_content {
+  width: 950px;
+  height: 1320px;
+  position: absolute;
+  background-color: #fff;
+  left: 10px;
+  bottom: 10px;
+}
+.new_ente .se_content .se_re {
+  box-sizing: border-box;
+  margin-top: 30px;
+  height: 75px;
+  padding: 30px 10px 0 10px;
+}
+.new_ente .se_content .se_re .re_one {
+  position: relative;
+  border-bottom: 1px solid #ECEEF2;
+}
+
+.enre_left {
+  float: left;
+  height: 45px;
+}
+.enre_left > a {
+  position: absolute;
+  z-index: 2;
+  width: 135px;
+  height: 44px;
+  left: 20px;
+  font-size: 16px;
+  text-align: center;
+  line-height: 44px;
+  border: 1px solid #ECEEF2;
+}
+.enre_left > a:first-child {
+  background-color: #f5f5f5;
+}
+.enre_left > a:nth-child(2) {
+  border-bottom-color: #fff;
+  left: 170px;
+}
+
+.enre_right {
+  width: 160px;
+  height: 45px;
+  line-height: 45px;
+  padding: 0 3px;
+  float: right;
+}
+.enre_right > a {
+  margin: 0 5px;
+}
+.enre_right > a:first-child::before {
+  content: "";
+}
+.enre_right > a:last-child {
+  float: right;
+  margin: 12px 10px 0 0;
+  width: 44px;
+  height: 22px;
+  line-height: 22px;
+  text-align: center;
+  padding: 1px 2px;
+  border-radius: 2px;
+  background: #9A9FA6;
+  color: #fff;
+}
+.enre_right > a:last-child:hover {
+  text-decoration: underline;
+}
+
+.re_tip > img {
+  display: block;
+}
+
+.re_tel {
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+  font-size: 16px;
+  color: #969696;
+  background: url(../img/qiye_tel.png);
+}
+.re_tel > a {
+  font-size: 14px;
+  margin-left: 10px;
+  color: #1A66B3;
+}
+
+/* 企业注册信息填写部分开始*/
+#ente_form > h2 {
+  font-size: 16px;
+  margin-left: 200px;
+  background: url(../img/icon_qy.png) no-repeat;
+  text-indent: 30px;
+}
+#ente_form > div {
+  height: 62px;
+  position: relative;
+}
+#ente_form > div > span {
+  display: inline-block;
+  width: 340px;
+  height: 30px;
+  line-height: 30px;
+  padding-right: 10px;
+  text-align: right;
+}
+#ente_form > div > input {
+  width: 312px;
+  height: 28px;
+  border: 1px solid #E6E6E6;
+  outline-color: #969696;
+}
+#ente_form > div > p {
+  height: 28px;
+  line-height: 30px;
+  text-indent: 5px;
+  margin-left: 350px;
+  visibility: hidden;
+}
+#ente_form > div > p > i {
+  display: none;
+  margin: 6px 2px 0 2px;
+  float: left;
+  width: 22px;
+  height: 10px;
+  background-color: #D6D6D6;
+}
+#ente_form > div > p > i:first-child {
+  background-color: #FF3600;
+}
+#ente_form > div > h3 {
+  height: 16px;
+  line-height: 16px;
+  width: 316px;
+  position: absolute;
+  border: 1px solid #FCD9B0;
+  background: #FFF0CF url(../img/new_tip.png) no-repeat 2px center;
+  font-weight: 100;
+  font-size: 12px;
+  top: 38px;
+  text-indent: 20px;
+  left: 354px;
+  display: none;
+}
+#ente_form .second {
+  background-position: 0 -28px;
+}
+
+input::placeholder {
+  font-size: 12px;
+  text-indent: 5px;
+}
+
+.company_adress {
+  height: auto !important;
+}
+.company_adress .adress_fill > span {
+  display: inline-block;
+  width: 340px;
+  height: 30px;
+  line-height: 30px;
+  padding-right: 10px;
+  text-align: right;
+}
+.company_adress .adress_fill > div {
+  display: inline-block;
+}
+.company_adress .adress_fill > div > p {
+  height: 30px;
+  line-height: 30px;
+}
+.company_adress .adress_fill > div > b {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  padding-right: 10px;
+  text-align: right;
+  border: 1px solid #E6E6E6;
+  padding: 0 10px;
+  margin-left: 5px;
+  font-weight: normal;
+}
+.company_adress .adress_fill > div > b::after {
+  content: "\e63d";
+  font-family: "iconfont";
+  font-weight: 600;
+  margin-left: 30px;
+}
+.company_adress .adress_fill > div > b:first-child {
+  margin-left: 0px;
+}
+.company_adress .adress_audit > span {
+  float: left;
+  display: inline-block;
+  width: 340px;
+  height: 30px;
+  line-height: 30px;
+  padding-right: 10px;
+  text-align: right;
+}
+.company_adress .adress_audit > input {
+  width: 312px;
+  height: 28px;
+  border: 1px solid #E6E6E6;
+  outline-color: #969696;
+  margin-left: 4px;
+}
+
+.fix_tel > div {
+  display: inline-block;
+  position: relative;
+}
+.fix_tel > div > input {
+  text-indent: 5px;
+  width: 96px;
+  height: 24px;
+  border: 1px solid #E6E6E6;
+  margin-left: 3px;
+  color: #969696;
+}
+.fix_tel > div > input:first-child {
+  margin-left: 0px;
+}
+.fix_tel > div > p {
+  position: absolute;
+  left: 0;
+  width: 80px;
+  height: 28px;
+}
+
+.ente_p {
+  margin-left: 20px !important;
+}
+
+#ente_form > input {
+  width: 178px;
+  height: 44px;
+  line-height: 44px;
+  display: block;
+  margin: 10px auto;
+  background-color: #FF2832;
+  border-radius: 25px;
+  border: none;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  letter-spacing: 1px;
+  outline: none;
+}
+
+/* 企业注册信息填写部分结束*/
+
+/*# sourceMappingURL=registy.css.map */

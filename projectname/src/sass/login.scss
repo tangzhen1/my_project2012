@@ -1,0 +1,370 @@
+@mixin Position($w, $r, $t) {
+    position: $w;
+    right: $r;
+    top: $t;
+}
+
+@mixin Height($w, $l) {
+    width: $w;
+    height: $l;
+    line-height: $l;
+}
+
+header {
+    padding: 10px 0;
+    height: 60px;
+    position: relative;
+    .header_left {
+        a {
+            display: block;
+            img {
+                display: block;
+            }
+        }
+    }
+    .header_right {
+        @include Position(absolute, 0, 0);
+        height: 60px;
+        >div {
+            position: absolute;
+            @include Height(150px, 15px);
+            bottom: 0;
+            right: 0;
+            >img {
+                vertical-align: top;
+            }
+            >a {
+                margin-left: 5px;
+            }
+            >a:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+section {
+    @include Height(1520px, 590px);
+    margin: 20px auto;
+    background: url(../img/get_login_ad.php) no-repeat center center;
+    >.container {
+        position: relative;
+        >a {
+            @include Height(620px, 450px);
+            position: absolute;
+            left: 30px;
+            top: 70px;
+        }
+        >.login_right {
+            @include Position(absolute, 0, 70px);
+            @include Height(362px, 425px);
+            width: 362px;
+            height: 425px;
+        }
+    }
+}
+
+.login_right {
+    .caution {
+        box-sizing: border-box;
+        @include Height(100%, 24px);
+        color: #828282;
+        background: #FEF7F5 url(../img/new_tip.png) no-repeat 2px center;
+        text-indent: 22px;
+        border: 1px solid #FEDBD1;
+    }
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#login {
+    position: relative;
+    padding: 10px;
+    box-sizing: border-box;
+    @include Height(100%, 468px);
+    border: 1px solid rgb(230, 230, 230);
+    >h1 {
+        @include Height(100%, 50px);
+        padding-left: 10px;
+        font-size: 20px;
+        font-weight: normal;
+    }
+    .login_qr {
+        @include Position(absolute, 0, 0);
+        @include Height(100%, 50px);
+        >a {
+            @include Height(50%, 100%);
+            @include Position(absolute, 0, 0);
+            &:last-child {
+                display: none;
+            }
+            >span {
+                position: absolute;
+                top: 12px;
+                text-indent: 25px;
+                color: #FF572A;
+                @include Height(120px, 20px);
+                border: 1px solid #FEDBD1;
+            }
+            >i {
+                @include Position(absolute, 39px, 16px);
+                @include Height(20px, 20px);
+                background: url(../img/arrow_right_icon.png) no-repeat;
+            }
+            &:first-child>span {
+                background: #FEF7F5 url(../img/safe_icon.png) no-repeat 2px center;
+            }
+            >b {
+                @include Position(absolute, 0, 0);
+            }
+        }
+    }
+}
+
+@mixin wid_mar() {
+    width: 312px;
+    height: 40px;
+    border: 1px solid #E6E6E6;
+    position: relative;
+    >em {
+        text-align: center;
+        float: left;
+        @include Height(30px, 40px);
+        font-family: "iconfont";
+        font-weight: 600;
+        font-size: 20px;
+        color: #e2e2e2;
+    }
+    >span {
+        position: absolute;
+        top: 0;
+        left: 30px;
+        display: block;
+        font-size: 14px;
+        letter-spacing: 1px;
+        @include Height(278px, 40px);
+        color: rgb(176, 176, 176);
+    }
+    >input {
+        @extend span;
+        @include Height(278px, 36px);
+        border: 0;
+        color: black;
+        outline: none;
+        display: none;
+    }
+    >i {
+        @include Position(absolute, 0, 13px);
+        @include Height(16px, 16px);
+        background: url(../img/icon_20150706.png) no-repeat 0 -230px;
+        display: none;
+    }
+}
+
+.login_user {
+    @include Height(314px, 64px);
+    margin: 10px auto 0;
+    >.user_div {
+        @include wid_mar();
+    }
+    >p {
+        @include Height(100%, 24px);
+        color: #6e6e6e;
+        display: none;
+        padding-left: 2px
+    }
+}
+
+.login_pass {
+    @include Height(314px, 64px);
+    margin: 5px auto;
+    >.pass_div {
+        @include wid_mar();
+        >em {
+            font-size: 24px;
+            line-height: 42px
+        }
+    }
+    >p {
+        @include Height(100%, 24px);
+        color: #6e6e6e;
+        display: none;
+        padding-left: 2px
+    }
+}
+
+.login_pic {
+    @include Height( 330px, 106px);
+    line-height: 0;
+    margin: auto;
+    >p {
+        font-size: 13px;
+        letter-spacing: 1px;
+        @include Height( 100%, 20px);
+        >a {
+            float: right;
+            color: #1A66B3;
+        }
+    }
+    >span {
+        margin: 10px 3px 0 0;
+        display: inline-block;
+        width: 76px;
+        height: 76px;
+        &:nth-of-type(1) {
+            background: url(../img/rotate.jpg) no-repeat 0 0;
+        }
+        &:nth-of-type(2) {
+            background: url(../img/rotate.jpg) no-repeat -76px 0;
+        }
+        &:nth-of-type(3) {
+            background: url(../img/rotate.jpg) no-repeat -152px 0;
+        }
+        &:nth-of-type(4) {
+            background: url(../img/rotate.jpg) no-repeat -228px 0;
+        }
+    }
+}
+
+.login_confirm {
+    margin: 5px auto;
+    text-indent: 5px;
+    @include Height( 330px, 34px);
+    >input {
+        float: left;
+        margin-top: 10px;
+    }
+    >a {
+        float: right;
+        color: #1A66B3;
+    }
+}
+
+.login_a {
+    >a {
+        text-align: center;
+        display: block;
+        @include Height( 330px, 44px);
+        background-color: #FF2832;
+        border-radius: 10px;
+        letter-spacing: 2px;
+        color: #fff;
+        font-size: 21px;
+        &:hover {
+            text-decoration: none;
+            background-color: #F01923;
+        }
+    }
+}
+
+.login_re {
+    @include Height( 330px, 30px);
+    >a {
+        &:nth-of-type(1) {
+            color: #1A66B3;
+            margin-left: 50px;
+        }
+        &:nth-of-type(2) {
+            float: right;
+        }
+    }
+}
+
+.login_ico {
+    @include Height( 330px, 20px);
+    >a {
+        display: inline-block;
+        @include Height( 20px, 20px);
+        margin-right: 2px;
+        &:nth-of-type(1) {
+            background: url(../img/icon_20150706.png) no-repeat 0 -260px;
+            &:hover {
+                background-position: -20px -260px;
+            }
+        }
+        &:nth-of-type(2) {
+            background: url(../img/icon_20150706.png) no-repeat 0 -280px;
+            &:hover {
+                background-position: -20px -280px;
+            }
+        }
+        &:nth-of-type(3) {
+            background: url(../img/icon_20150706.png) no-repeat 0 -300px;
+            &:hover {
+                background-position: -20px -300px;
+            }
+        }
+        &:nth-of-type(4) {
+            background: url(../img/icon_20150706.png) no-repeat 0 -320px;
+            &:hover {
+                background-position: -20px -320px;
+            }
+        }
+    }
+    .more {
+        width: 80px;
+        float: right;
+        margin-right: 120px;
+        >a {
+            color: #969696;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+        >a::after {
+            content: "\e63d";
+            font-family: "iconfont";
+            margin-left: 4px;
+        }
+    }
+}
+
+.sage_int {
+    @include Height( 100%, 100%);
+    background-color: rgba(0, 0, 0, .1);
+    @include Position(fixed, 0, 0);
+    z-index: 5;
+    display: none;
+    >.cheat {
+        @include Height(500px, 180px);
+        @include Position(absolute, 50%, 40%);
+        transform: translate(50%, -50%);
+        background-color: #fff;
+        >h3 {
+            background-color: #f5f5f5;
+            @include Height(100%, 40px);
+            text-align: center;
+            font-size: 16px;
+        }
+        >.cheat_content {
+            position: relative;
+            height: 140px;
+            box-sizing: border-box;
+            padding: 20px 40px;
+            >p {
+                @include Height(100%, 40px);
+                line-height: 20px;
+                >a {
+                    font-weight: 600;
+                    color: red;
+                }
+                >a:hover {
+                    text-decoration: none
+                }
+            }
+            >button {
+                @include Position(absolute, 50%, 60%);
+                transform: translate(50%, 50%);
+                @include Height(60px, 20px);
+                border: 0;
+                border-radius: 3px;
+                background: #FF2832;
+                color: #fff;
+                text-align: center;
+                outline: none;
+            }
+        }
+    }
+}

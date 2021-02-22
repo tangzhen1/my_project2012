@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新用户注册 - 当当网</title>
+    <link rel="shortcut icon" href="./img/下载.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/registy.css">
+    <link rel="stylesheet" href="font/iconfont.css">
+    <link rel="stylesheet" href="css/login_foot.css">
+    <script src="./script/registy_moudle.js" type="module"></script>
+</head>
+
+<body>
+    <!-- 头部区域开始 -->
+    <header class="h">
+        <div class="header_left">
+            <a href=""><img src="https://login.dangdang.com/images/ddnewhead_logo.gif" alt=""></a>
+        </div>
+        <div class="header_right">
+            <div class="header_right_top">
+                <ul class="top_nav">
+                    <li class="header_car"><a href="">购物车</a></li>
+                    <li><a href="">我的订单</a></li>
+                    <li class="my_dd"><a href="">我的当当</a>
+                        <ol>
+                            <li><a href="">我的订单</a></li>
+                            <li><a href="">购物礼券</a></li>
+                            <li><a href="">我的积分</a></li>
+                            <li><a href="">我的收藏</a></li>
+                            <li><a href="">我的评论</a></li>
+                            <li><a href="">数字商品</a></li>
+                        </ol>
+                    </li>
+                    <li class="my_dd"><a href="">礼品卡</a>
+                        <ol>
+                            <li><a href="">购买</a> </li>
+                            <li><a href="">激活</a> </li>
+                        </ol>
+                    </li>
+                    <li><a href="">手机当当</a></li>
+                    <li><a href="">企业销售</a></li>
+                    <li><a href="">帮助</a></li>
+                </ul>
+            </div>
+            <p class="header_welcome">欢迎光临当当网,请<a href="">登录</a>&nbsp;<a href="">免费注册</a></p>
+        </div>
+    </header>
+    <!-- 头部区域结束 -->
+    <!-- 模块注册区域开始 -->
+    <main>
+        <section class="newUser">
+            <div class="se_content">
+                <!-- 注册提示部分 -->
+                <div class="se_re">
+                    <div class="re_one clearfix">
+                        <div class="re_left">
+                            <a href="JavaScript:;" id="new_u">新用户注册</a >
+                                <a href="JavaScript:;" id="new_q">企业用户注册</a>
+                        </div>
+                        <div class="re_right">
+                            <a href="index1.html">当当首页</a>
+                            <a href="">注册帮助</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 注册提示部分结束 -->
+                <!-- 注册信息填写部分 -->
+                <div class="re_me">
+                    <div class="re_hint">
+                        贴心提示：请勿设置与邮箱密码相同的账户登录密码或支付密码，防止不法分子窃取您的当当账户信息，<a href="">谨防诈骗</a></div>
+                    <form action="http://10.31.165.21:3000/projectname/php/register.php
+                        " id="re_form" method="POST">
+                        <div><span>手机号码</span>
+                            <input type="text" placeholder="请输入您的手机号码" name="tel1" class="tel"><em></em>
+                            <p>手机号可用于登录、找回密码、接收订单通知等服务</p>
+                        </div>
+                        <div><span>登陆密码</span>
+                            <input type="password" name="password1" class="password" maxlength="20"><em></em>
+                            <p><i></i><i></i><i></i><strong>密码为6-20个字符,可由英文、数字、及符号组成</strong></p>
+                            <h3>键盘大写锁定已打开,&nbsp;请注意大小写</h3>
+                        </div>
+                        <div><span>确认密码</span>
+                            <input type="password" name="repass" class="repass"><em></em>
+                            <p>请再次输入密码</p>
+                        </div>
+                        <div class="ver_code "><span>验证码</span>
+                            <input type="text " placeholder="请输入验证码 "><em></em>
+                            <a href="javascript:; "><img src="https://login.dangdang.com/p/tmp_proxy.php?t=1612177997531 " alt=" "></a><a href="javascript:; ">换张图</a>
+                            <p>请填写图片中的字符,不区分大小写</p>
+                        </div>
+                        <div class="affirm_re "><input type="checkbox">我已阅读并同意&nbsp;《
+                            <a href=" ">当当交易条款</a>》&nbsp;《
+                            <a href=" ">当当社区条款</a>》&nbsp;和&nbsp;《<a href=" ">当当隐私政策</a>》
+                            <p>您必须同意当当服务条款后，才能提交注册。</p>
+                        </div>
+                        <input type="submit" name="submit" value="立即注册" class="sub">
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section class="new_ente">
+            <div class="se_content">
+                <!-- 注册提示部分 -->
+                <div class="se_re">
+                    <div class="re_one clearfix">
+                        <div class="enre_left">
+                            <a href="JavaScript:;" id="new_u2">新用户注册</a >
+                            <a href="JavaScript:;" id="new_q2">企业用户注册</a>
+                        </div>
+                        <div class="enre_right">
+                            <a href="">欢迎光临当当网</a>
+                            <a href="">请登录</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 注册提示部分结束 -->
+                <!-- 注册信息填写部分 -->
+                <div class="re_tip">
+                    <img src="https://login.dangdang.com/images/login_qiye4.png" alt="">
+                </div>
+                <div class="re_tel">
+                    客服专线: 400 106 6666 <a href="">查看购买规则</a>
+                </div>
+                <div class="re_me">
+                    <div class="re_hint">
+                        贴心提示：请勿设置与邮箱密码相同的账户登录密码或支付密码，防止不法分子窃取您的当当账户信息，<a href="">谨防诈骗</a></div>
+                    <form action="" id="ente_form">
+                        <h2>账户信息</h2>
+                        <div style="height: 30px;"></div>
+                        <div><span>用户名</span>
+                            <input type="text" name="tellphone"><em></em>
+                            <p></p>
+                        </div>
+                        <div><span>设置密码</span>
+                            <input type="password" name="password2"><em></em>
+                            <p><i></i><i></i><i></i><strong>密码为6-20个字符,可由英文、数字、及符号组成</strong></p>
+                            <h3>键盘大写锁定已打开,&nbsp;请注意大小写</h3>
+                        </div>
+                        <div><span>确认密码</span>
+                            <input type="password " name="repass"><em></em>
+                            <p></p>
+                        </div>
+                        <h2 class="second">企业及联系人信息</h2>
+                        <div style="height: 30px;"></div>
+                        <div><span>公司名称</span>
+                            <input type="text" name="companyName" placeholder="请填写单位执照上得名称"><em></em>
+                            <p></p>
+                        </div>
+                        <div class="company_adress">
+                            <div class="adress_fill"><span>公司地址</span>
+                                <div><b>请选择</b> <b>请选择</b> <b>请选择</b>
+                                    <p></p>
+                                </div>
+
+                            </div>
+                            <div class="adress_audit">
+                                <span></span>
+                                <input type="text">
+                            </div>
+                            <em></em>
+                            <p></p>
+                        </div>
+                        <div><span>公司邮箱</span>
+                            <input type="email" placeholder="建议填写企业邮箱"><em></em>
+                            <p></p>
+                        </div>
+                        <div class="fix_tel"><span>固定电话</span>
+                            <div>
+                                <input type="text" maxlength="4">
+                                <input type="text" maxlength="8">
+                                <input type="text" maxlength="8">
+                                <em></em>
+                                <p></p>
+                            </div>
+                        </div>
+                        <div><span>联系人姓名</span>
+                            <input type="text"><em></em>
+                            <p></p>
+                        </div>
+                        <div><span>手机号</span>
+                            <input type="tel "><em></em>
+                            <p></p>
+                        </div>
+                        <div class="ver_code "><span>验证码</span>
+                            <input type="text " placeholder="请输入验证码 "><em></em>
+                            <a href="javascript:; " class="ente_p"><img src="https://login.dangdang.com/p/tmp_proxy.php?t=1612177997531 " alt=" "></a><a href="javascript:; ">换张图</a>
+                            <p></p>
+                        </div>
+                        <div class="affirm_re ente_affirm_re"><input type="checkbox">我已阅读并同意&nbsp;《
+                            <a href=" ">当当交易条款</a>》&nbsp;《
+                            <a href=" ">当当社区条款</a>》&nbsp;和&nbsp;《<a href=" ">当当隐私政策</a>》
+                            <p>您必须同意当当服务条款后，才能提交注册。</p>
+                        </div>
+                        <input type="submit" name="submit " value="立即注册" class="sub">
+                    </form>
+                </div>
+        </section>
+    </main>
+    <!-- 模块注册区域结束 -->
+    <!-- 底部区域开始 -->
+    <footer>
+        <div class="h cotainer ">
+            <div class="foot_nav ">
+                <ul>
+                    <li> <a href=" ">公司简介</a> </li>
+                    <li> <a href=" ">诚聘英才</a> </li>
+                    <li> <a href=" ">网站联盟</a> </li>
+                    <li> <a href=" ">当当招商</a> </li>
+                    <li> <a href=" ">机构销售</a> </li>
+                    <li> <a href=" ">手机当当</a> </li>
+                    <li> <a href=" ">官方Blog</a> </li>
+                    <li> <a href=" ">知识产权</a> </li>
+                    <li> <a href=" ">热词搜索</a> </li>
+                </ul>
+            </div>
+            <p>Copyright (C) 当当网 2004-2020, All Rights Reserved</p>
+            <div class="foot_copyright ">
+                <p> <span>京ICP证041189号</span><em>|</em><a href=" ">出版物经营许可证 新出发京批字第直0673号</a><em>|</em><a href=" ">食品经营许可证：JY11101050363440</a></p>
+                <p><a href=" ">京ICP备17043473号-1</a><em>|</em>
+                    <a href=" "><img src="https://img60.ddimg.cn/assets/pc_image/jinggongwanganbei.png " alt=" ">京公网安备11010502037644号</a><em>|</em><a href=" ">经营许可证编号：合字B2-20160011</a><em>|</em><a href=" ">互联网药品信息服务资格证</a></p>
+                <p>互联网违法和不良信息举报电话：4001066666-5 邮箱：<a href=" ">service@cs.dangdang.com</a></p>
+                <p><a href=" ">网络出版服务许可证（总）网出证（京）字第049号</a><a href=" ">北京当当科文电子商务有限公司</a>，公司地址：北京市朝阳区北三环东路8号静安中心21层</p>
+                <div class="foot_pic ">
+                    <a href=" "><img src="http://img61.ddimg.cn/7d593c48-48f6-4fc9-85e0-7d6e10dfc2a2.hpvgUvc9 " alt=" "></a>
+                    <a href=" "><img src="http://img63.ddimg.cn/upload_img/00111/home/brand_128_47.png " alt=" "></a>
+                    <a href=" "><img src="http://img60.ddimg.cn/upload_img/00459/home/hlwjbzx_182.png " alt=" "></a>
+                    <a href=" "><img src="http://img60.ddimg.cn/upload_img/00459/home/cnnic.png " alt=" "></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- 底部区域结束 -->
+</body>
+
+</html>

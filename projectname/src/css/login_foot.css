@@ -1,0 +1,60 @@
+@charset "UTF-8";
+/*底部区域开始*/
+footer {
+  text-align: center;
+  margin-top: 40px;
+  border-top: 1px solid #EBEBEB;
+  height: 270px;
+  color: #8c8c8c;
+  padding: 10px 0 50px 0; }
+
+.foot_nav {
+  padding: 30px 0 20px 0; }
+  .foot_nav > ul {
+    display: inline-block; }
+    .foot_nav > ul > li {
+      float: left;
+      margin: 0 10px;
+      height: 20px;
+      line-height: 20px; }
+      .foot_nav > ul > li:after {
+        content: "";
+        display: inline-block;
+        width: 1px;
+        height: 12px;
+        margin-left: 10px;
+        vertical-align: middle;
+        background-color: transparent;
+        border-right: 1px solid #9A8C69; }
+      .foot_nav > ul > li:last-child:after {
+        border-right: 0; }
+      .foot_nav > ul > li > a {
+        color: #8c8c8c; }
+      .foot_nav > ul > li > a:hover {
+        color: #f48570;
+        text-decoration: underline; }
+
+.foot_copyright {
+  margin-top: 15px; }
+  .foot_copyright > p {
+    height: 25px;
+    line-height: 25px; }
+    .foot_copyright > p > em {
+      margin: 0 15px; }
+    .foot_copyright > p > a:hover {
+      color: #f48570;
+      text-decoration: underline; }
+    .foot_copyright > p > a {
+      margin: 0 5px; }
+      .foot_copyright > p > a > img {
+        vertical-align: middle;
+        margin-right: 3px; }
+  .foot_copyright .foot_pic {
+    margin-top: 20px; }
+    .foot_copyright .foot_pic > a {
+      display: inline-block;
+      margin: 0 5px; }
+
+/*底部区域结束*/
+
+/*# sourceMappingURL=login_foot.css.map */

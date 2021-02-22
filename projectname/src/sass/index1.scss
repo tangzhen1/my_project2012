@@ -1,0 +1,21 @@
+/*  头部图片部分开始 */
+
+header {
+    height: 200px;
+    overflow: hidden;
+    div {
+        height: 300px;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+
+/*  头部图片部分结束 */
+
+@import "nav";
+@import "nav2";
+@import "sub";
+@import "sec_one";
